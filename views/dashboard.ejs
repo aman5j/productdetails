@@ -1,0 +1,99 @@
+<style>
+    .container1{
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+        width: 100%;
+        height: 10%;
+    }
+    .container2{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 90%;
+    }
+    .box1{
+        background-color: #fff;
+        height:100% ;
+        width: 19%;
+    }
+    .box2{
+        background-color: rgb(221, 221, 221);
+        height: 100%;
+        width: 81%;
+    }
+    .back1{
+        background-image: url('/images/search.png');
+        background-repeat: no-repeat;
+        background-size: 35px;
+        background-position: 5px;
+    }
+    .gap{
+        margin-bottom: 30px;
+    }
+    .linkdiv{
+        display: flex;
+        flex-direction: row;
+    }
+    .linkstyle{
+        font-size: 18px;
+        padding-left: 25px;
+        font-weight: 600;
+    }
+ 
+</style>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    </head>
+    <form>
+        <body>
+            <div class="container1">
+                  <img src="/images/shopcart.png" width="100px" height="75px" style="padding-left: 25px;">
+                  <div style="font-size: 30px;font-weight: bold;margin-top: 9px;padding-left: 5px;color: rgb(39, 21, 119);">Best Buy</div>
+                  <div style="padding-top: 18px;padding-left: 60px;"><img src="/images/lines.png" height="25px" width="20px"></div>
+                  <div style="padding-top: 12px;padding-left: 15px;"><input type="text" class="form-control back1" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search Products" style="width: 500px;border: none;" name="search"></div>
+                  <div style="padding-top: 15px;padding-left: 30px;"><img src="/images/user.png" height="35px" width="35px"></div>
+                  <div style="padding-top: 20px;padding-left: 5px;"><b><%=data.adminname %></b></div>
+                  <div style="padding-top: 15px;padding-left: 30px;"><img src="/images/email.png" height="30px" width="30px"></div>
+                  <div style="padding-top: 17px;padding-left: 30px;"><img src="/images/alert.png" height="25px" width="30px"></div>
+                  <div style="padding-top: 17px;padding-left: 30px;"><a style="text-decoration: none;" href="/admin/logout"><img src="/images/logout.png" height="25px" width="25px"></a></div>
+                  <div style="padding-top: 13px;padding-left: 25px;"><img src="/images/menu.png" height="35px" width="35px"></div>
+            </div>
+            <div class="container2">
+                <div class="box1">
+                    <div class="linkdiv gap">
+                        <div style="padding-top: 19px;padding-left: 20px;"><img src="/images/<%=data.picture %>" height="45px" width="45px" style="border-radius: 25px;"></div>
+                        <div style="padding-top: 21px;padding-left: 5px;"><b><%=data.adminname %></b><h6 style="font-size: 12px;"><%=data.emailid %></h6></div>
+                    </div>
+                    <div class="linkdiv gap">
+                        <div class="linkstyle">Dashboard</div>
+                        <div style="padding-left: 92px;padding-top: 1px;"><img src="/images/home.png" height="25px" width="30px"></div>
+                    </div>
+                    <div class="linkdiv gap">
+                        <div class="linkstyle"><a href="/product/product_interface" target="frame" style="text-decoration: none;">Products</a></div>
+                        <div style="padding-left: 110px;padding-top: 1px;"><a href="/product/product_interface" target="frame" style="text-decoration: none;"><img src="/images/products.png" height="25px" width="30px"></a></div>
+                    </div>
+                <div class="linkdiv gap">
+                    <div class="linkstyle"><a href="/product/fetch_all_products" target="frame" style="text-decoration: none;">Display Products</a></div>
+                    <div style="padding-left: 47px;padding-top: 1px;"><a href="/product/fetch_all_products" target="frame" style="text-decoration: none;"><img src="/images/display.png" height="25px" width="30px"></a></div>
+                </div>
+                <div class="linkdiv gap">
+                    <div class="linkstyle"><a href="/product/document_details" target="frame" style="text-decoration: none;">Documantation</a></div>
+                    <div style="padding-left: 55px;padding-top: 1px;"><a href="/product/document_details" target="frame" style="text-decoration: none;"><img src="/images/document.png" height="25px" width="30px"></a></div>
+                </div>
+                <div class="linkdiv gap">
+                    <div class="linkstyle"><a style="text-decoration: none;" href="/admin/logout">Logout</a></div>
+                    <div style="padding-left: 130px;padding-top: 1px;"><a style="text-decoration: none;" href="/admin/logout"><img src="/images/logout.png" height="22px" width="20px"></a></div>
+                </div>
+            </div>
+                <div class="box2">
+                    <iframe frameborder="0" name="frame" width="100%" height="100%">
+
+                    </iframe>
+                </div>
+            </div>
+        </body>
+    </form>
+</html>

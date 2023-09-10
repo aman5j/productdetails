@@ -1,0 +1,13 @@
+<html>
+    <center>
+        <form action="/product/edit_picture" method="post" enctype="multipart/form-data">
+        <h1><%=data.productname %></h1>
+        <img src="/images/<%=data.picture %>" width="300"><br><br>
+        <b>Select New Image u Want to Upload....</b><br><br>
+        <input type="file" name="productpicture" required><br>
+        <input type="hidden" name="oldfilename" value="<%=data.picture %>"><br>
+        <input type="hidden" name="productid" value="<%=data.productid %>"><br>
+        <input type="submit" value="Upload New Image">
+        </form>
+    </center>
+</html>

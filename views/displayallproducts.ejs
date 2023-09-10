@@ -1,0 +1,108 @@
+<style>
+    .maincontainer{
+        background: #bdc3c7;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .box{
+        background: #fff;
+        width: 80%;
+        height: 60%;
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+    }
+    .heading{
+        font-size: 24px;
+        font-weight: bold;
+        font-family: Oswald;
+        padding: 5px;
+        letter-spacing: 1px;
+    }
+    .image{
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+    .headingdiv{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .formDiv{
+        margin: 10px;
+
+    }
+    .gap{
+        margin-bottom: 10px;
+    }
+    .btnstyle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+</style>
+
+<html>
+    <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    </head>
+    <div class="maincontainer">
+        <div class="box">
+            <div class="headingdiv">
+                <div style="display: flex; flex-direction: row;">
+                <div><img src="/images/logo.jpg" class="image" ></div>
+                <div class="heading">Product Register</div>
+                </div>
+
+                <div><a href="/product/product_interface" style="text-decoration: none;"><img src="/images/addproduct.png" style="width: 40px; "> </a></div>
+            </div>
+        
+    
+    <div>
+    <% if(data.length==0) {%>
+        <%=message %>
+    <% } else { %>
+        <table class="table table-striped">
+            <tr>
+                <th>#</th>
+                <th>Id/Name</th>
+                <th>Type/Category</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Price<br>Offer Price</th>
+                <th>Picture</th>
+                <th>Edit</th>
+            </tr>
+        
+
+        <% data.map((item,i)=>{%>
+        <tr>
+            <td><%=i+1 %></td>
+            <td><%=item.productid %>/<%=item.productname %></td>
+            <td><%=item.producttypename %>/<br><%=item.productcategoryname %></td>
+            <td><%=item.description %></td>
+            <td><%=item.quantity %> <%=item.quantitytype %></td>
+            <td><s><%=item.price %></s>/<%=item.offer %></td>
+            <td><a href="/product/displaypictureforedit?productid=<%=item.productid%>&productname=<%=item.productname %>&picture=<%=item.productpicture%>" style="text-decoration: none;"><img src="/images/<%=item.productpicture %>" style="width: 60px; height: 60px; border-radius: 30px;" ></a></td>
+            <td><a href="/product/displayforedit?productid=<%=item.productid%>" style="text-decoration: none;"><img src="/images/edit.png" style="width: 40px; height: 40px;" ></a></td>
+        </tr>
+        <% }) %> 
+    </table>
+    </div>    
+    <% } %>
+        </div>
+    </div>
+</html>
